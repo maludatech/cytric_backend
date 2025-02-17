@@ -1,7 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectToDb } from "./db/database.js";
-import routes from "./routes/store-nft-data.js";
+import routes from "./routes/storeNFTData.js";
 
 dotenv.config();
 
