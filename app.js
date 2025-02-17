@@ -1,8 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import { connectToDb } from "./db/database.js";
-import storeNFTRoutes from "./routes/storeNFTData.js";
-import getNFTRoutes from "./routes/getNFTById.js";
+import storeNFT from "./routes/storeNFT.js";
+import getNFT from "./routes/getNFT.js";
 
 dotenv.config();
 
@@ -13,8 +13,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //routes
-app.use("/api/nft", storeNFTRoutes);
-app.use("/api/nft", getNFTRoutes);
+app.use("/api/nft", storeNFT);
+app.use("/api/nft", getNFT);
 
 const PORT = process.env.PORT || 3500;
 

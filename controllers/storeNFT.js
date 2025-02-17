@@ -1,7 +1,7 @@
 import NFT from "../db/models/NFT.js";
 import { NFTSchema } from "../validator/validatorSchema.js";
 
-export const storeNFTData = async (req, res) => {
+export const storeNFT = async (req, res) => {
   const { error, value } = NFTSchema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.details[0].message });

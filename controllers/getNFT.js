@@ -17,3 +17,7 @@ export const getNFTById = async (req, res) => {
       .json({ message: "Internal server error", error: error.message });
   }
 };
+
+export const getNFTGallery = async(req,res) =>{
+  
+}
