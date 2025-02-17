@@ -10,6 +10,13 @@ export const storeNFTData = async (req, res) => {
   const { nftId, nftName, nftDescription, nftLogo, userWalletAddress } = value;
 
   try {
+    const existingNFT = await NFT.findOne({ nftId });
+    if (existingNFT) {
+      return res
+        .status(409)
+        .json({ message: "NFT with this ID already exists" });
+    }
+
     const nft = await NFT.create({
       nftId,
       nftName,

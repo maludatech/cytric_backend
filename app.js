@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //routes
-app.use("/api/store-nft-data", routes);
+app.use("/api", routes);
 
 const PORT = process.env.PORT || 3500;
 
