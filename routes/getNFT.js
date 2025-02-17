@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.get("/:id", getNFTById);
 
-router.get("/gallery/:user-wallet-address", getNFTGallery);
+router.get("/gallery/:wallet", getNFTGallery);
 
 export default router;
