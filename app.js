@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { connectToDb } from "./db/database.js";
 import storeNFT from "./routes/storeNFT.js";
 import getNFT from "./routes/getNFT.js";
@@ -11,6 +12,7 @@ const app = express();
 //Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors()); //allow all routes or origins
 
 //routes
 app.use("/api/nft", storeNFT);
